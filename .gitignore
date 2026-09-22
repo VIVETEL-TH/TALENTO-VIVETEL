@@ -1,0 +1,20 @@
+# dependencias
+/node_modules
+
+# build de Next.js
+/.next/
+/out/
+
+# variables de entorno (contienen claves — nunca se suben)
+.env
+.env.local
+.env*.local
+
+# sistema
+.DS_Store
+Thumbs.db
+*.log
+npm-debug.log*
+
+# editor
+.vscode/
