@@ -9,6 +9,11 @@ Supabase (base de datos, usuarios y archivos). Por ahora solo muestra una
 pantalla de estado; los módulos reales (expediente del trabajador,
 capacitación, comités) se construyen sobre esta base en la Fase 3.
 
+## Despliegue
+
+Publicado en Vercel, conectado a este repositorio (rama `main`). Cada
+cambio subido aquí se construye y publica automáticamente.
+
 ## Cómo dejarla funcionando en su computador (opcional, solo si quiere verla)
 
 No es necesario hacer esto para que el proyecto avance — el equipo sigue
