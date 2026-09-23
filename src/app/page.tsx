@@ -51,6 +51,15 @@ export default function Home() {
           ))}
         </ul>
       </div>
+
+      <div className="card">
+        <strong>Ya disponible</strong>
+        <p style={{ margin: "8px 0" }}>
+          <a href="/expediente" style={{ color: "#2e5395", fontWeight: "bold" }}>
+            → Ir al expediente del trabajador
+          </a>
+        </p>
+      </div>
     </main>
   );
 }
