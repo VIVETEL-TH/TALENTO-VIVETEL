@@ -78,3 +78,55 @@ export const ESTADO_COLOR: Record<EstadoCompetencia, { bg: string; fg: string }>
   vigente: { bg: "#e2efda", fg: "#1e7145" },
   sin_registro: { bg: "#e9ecef", fg: "#495057" },
 };
+
+// ---------------------------------------------------------------------
+// Capacitación — plan único y transversal a todos los riesgos, incluido
+// el COPASST. Un tema se define una sola vez; se dicta en sesiones; cada
+// trabajador queda con su asistencia por sesión.
+// ---------------------------------------------------------------------
+
+export type CategoriaCapacitacion =
+  | "general"
+  | "alturas"
+  | "copasst"
+  | "convivencia"
+  | "emergencias"
+  | "vial"
+  | "salud";
+
+export const CATEGORIA_LABEL: Record<CategoriaCapacitacion, string> = {
+  general: "General",
+  alturas: "Trabajo en alturas",
+  copasst: "COPASST",
+  convivencia: "Convivencia laboral",
+  emergencias: "Emergencias",
+  vial: "Seguridad vial",
+  salud: "Salud",
+};
+
+export type TemaCapacitacion = {
+  id: string;
+  empresa_id: string;
+  nombre: string;
+  categoria: CategoriaCapacitacion;
+  horas: number | null;
+  periodicidad_meses: number | null;
+  obligatorio: boolean;
+};
+
+export type SesionCapacitacion = {
+  id: string;
+  empresa_id: string;
+  tema_id: string;
+  fecha: string;
+  facilitador: string | null;
+  tipo: "interna" | "externa";
+  soporte_url: string | null;
+};
+
+export type AsistenciaCapacitacion = {
+  id: string;
+  sesion_id: string;
+  trabajador_id: string;
+  asistio: boolean;
+};

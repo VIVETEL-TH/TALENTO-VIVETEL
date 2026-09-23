@@ -1,6 +1,6 @@
 "use client";
 
-import { Fragment, useEffect, useMemo, useState, type CSSProperties } from "react";
+import { Fragment, useEffect, useMemo, useState } from "react";
 import { supabase } from "@/lib/supabaseClient";
 import {
   Cargo,
@@ -12,6 +12,7 @@ import {
   ESTADO_COLOR,
   EstadoCompetencia,
 } from "@/lib/tipos";
+import { thStyle, tdStyle, botonEstilo, inputStyle, badgeEstilo } from "@/lib/estilos";
 
 // Esta pantalla asume, por ahora, una sola empresa (Vivetel). Cuando se
 // sume el laboratorio, aquí se agrega un selector de empresa y se filtra
@@ -194,16 +195,7 @@ export default function ExpedientePage() {
                           {t.tipo_vinculacion === "directo" ? "Directo" : "Contratista"}
                         </td>
                         <td style={tdStyle}>
-                          <span
-                            style={{
-                              background: color.bg,
-                              color: color.fg,
-                              borderRadius: 999,
-                              padding: "2px 10px",
-                              fontSize: "0.8rem",
-                              fontWeight: "bold",
-                            }}
-                          >
+                          <span style={badgeEstilo(color.bg, color.fg)}>
                             {ESTADO_LABEL[estado]}
                           </span>
                         </td>
@@ -248,18 +240,6 @@ export default function ExpedientePage() {
     </main>
   );
 }
-
-const thStyle: CSSProperties = { padding: "8px 6px", fontSize: "0.85rem", color: "#555" };
-const tdStyle: CSSProperties = { padding: "8px 6px" };
-const botonEstilo: CSSProperties = {
-  background: "#1f3864",
-  color: "#fff",
-  border: "none",
-  borderRadius: 6,
-  padding: "8px 16px",
-  cursor: "pointer",
-  fontFamily: "Arial, sans-serif",
-};
 
 function FormNuevoTrabajador({
   cargos,
@@ -436,16 +416,7 @@ function CompetenciasTrabajador({
                 <td style={tdStyle}>{r.fecha_obtencion ?? "—"}</td>
                 <td style={tdStyle}>{r.fecha_vencimiento ?? "—"}</td>
                 <td style={tdStyle}>
-                  <span
-                    style={{
-                      background: color.bg,
-                      color: color.fg,
-                      borderRadius: 999,
-                      padding: "2px 10px",
-                      fontSize: "0.8rem",
-                      fontWeight: "bold",
-                    }}
-                  >
+                  <span style={badgeEstilo(color.bg, color.fg)}>
                     {ESTADO_LABEL[estado]}
                   </span>
                 </td>
@@ -505,12 +476,3 @@ function CompetenciasTrabajador({
   );
 }
 
-const inputStyle: CSSProperties = {
-  display: "block",
-  width: "100%",
-  marginTop: 4,
-  padding: "8px 10px",
-  border: "1px solid #e2e5eb",
-  borderRadius: 6,
-  fontFamily: "Arial, sans-serif",
-};

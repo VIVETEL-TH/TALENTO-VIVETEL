@@ -59,6 +59,11 @@ export default function Home() {
             → Ir al expediente del trabajador
           </a>
         </p>
+        <p style={{ margin: "8px 0" }}>
+          <a href="/capacitacion" style={{ color: "#2e5395", fontWeight: "bold" }}>
+            → Ir al plan de capacitación
+          </a>
+        </p>
       </div>
     </main>
   );
